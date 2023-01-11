@@ -43,23 +43,31 @@ Nearly 8000 real bottle cap images are captured by our IoT Smart Bottle Openners
 
 ## Training plot
 
-<img src="figures/training_plot.png" />
+SkippedVGG quickly converge without dealing with over-fitting
 
+<img src="figures/training_plot.png" />
 
 ## Performance of SkippedVGG
 
-<img src="figures/performance.png" />
-
-## Number of hyperparameters
+We compare our 3 architectures with popular baseline models, i.e. VGG16, ResNet, and DenseNet by number of parameters and test accuracy as below
 
 <img src="figures/hyperparameters.png" />
 
 
+We further explore the precision, recall and f1, SkippedVGG proves it is robust to bottle cap classification despite being under hard condition of the dataset.
+
+<img src="figures/performance.png" />
+
+
 ## Robust classification results
+
+We pick some cases to show the effectiveness of SkippedVGG under many challenging conditions. A lot of images suffer the blur effect due to fast openning action. Additionally, some reflect the flash from the camera lacking most patterns, while others are under dark condition. However, SkippedVGG still give high prediction confidence.
 
 <img src="figures/robust_classification.png" />
 
 ## Class Activation Map visualization
+
+To understand how SkippedVGG predict the result, we leverage Class Activation Map (CAM) to visualize the "attention" of model. When most of patterns are flushed out due to darkness or brightness, the model still correctly captures the regions with rich patterns.
 
 <img src="figures/cam_visualization.png" />
 
